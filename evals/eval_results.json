@@ -1,0 +1,163 @@
+{
+  "total_cases": 5,
+  "passed": 5,
+  "failed": 0,
+  "pass_rate_percent": 100.0,
+  "results": [
+    {
+      "test_case": {
+        "id": "TC-01",
+        "category": "grounded_factual",
+        "user_id": "eval_alice",
+        "question": "What is Asterline Labs and where are its offices located?",
+        "expected_doc_ids": [
+          "company"
+        ],
+        "expected_keywords": [
+          "Asterline Labs",
+          "Pune",
+          "Dublin"
+        ],
+        "should_have_missing_evidence": false,
+        "should_have_conflict": false
+      },
+      "checks": {
+        "keywords_present": true,
+        "citations_valid": true,
+        "execution_trace_complete": true
+      },
+      "status": "PASSED",
+      "answer_preview": "Based on the verified Asterline documentation:\n\n- According to Company overview [company:0]:\n  \"Asterline Labs is a fictional workflow-monitoring soft",
+      "valid_citations": [
+        "company:0",
+        "regions:0",
+        "company:0",
+        "regions:0"
+      ],
+      "invalid_citations": [],
+      "execution_steps_count": 5
+    },
+    {
+      "test_case": {
+        "id": "TC-02",
+        "category": "grounded_security",
+        "user_id": "eval_alice",
+        "question": "What encryption standards does Asterline use for data at rest and in transit?",
+        "expected_doc_ids": [
+          "security"
+        ],
+        "expected_keywords": [
+          "AES-256",
+          "TLS 1.2"
+        ],
+        "should_have_missing_evidence": false,
+        "should_have_conflict": false
+      },
+      "checks": {
+        "keywords_present": true,
+        "citations_valid": true,
+        "execution_trace_complete": true
+      },
+      "status": "PASSED",
+      "answer_preview": "Based on the verified Asterline documentation:\n\n- According to Security overview [security:0]:\n  \"Asterline encrypts data with AES-256 at rest and TLS",
+      "valid_citations": [
+        "security:0",
+        "company:0",
+        "security:0",
+        "company:0"
+      ],
+      "invalid_citations": [],
+      "execution_steps_count": 5
+    },
+    {
+      "test_case": {
+        "id": "TC-03",
+        "category": "missing_evidence",
+        "user_id": "eval_charlie",
+        "question": "What are the menu items available at the Asterline Pune cafeteria for breakfast?",
+        "expected_doc_ids": [],
+        "expected_keywords": [
+          "insufficient evidence"
+        ],
+        "should_have_missing_evidence": true,
+        "should_have_conflict": false
+      },
+      "checks": {
+        "keywords_present": true,
+        "citations_valid": true,
+        "missing_evidence_handled": true,
+        "execution_trace_complete": true
+      },
+      "status": "PASSED",
+      "answer_preview": "Based on the provided Asterline documentation, there is insufficient evidence to answer your question. No matching document records were found.",
+      "valid_citations": [],
+      "invalid_citations": [],
+      "execution_steps_count": 4
+    },
+    {
+      "test_case": {
+        "id": "TC-04",
+        "category": "conflicting_superseded",
+        "user_id": "eval_alice",
+        "question": "Which regional projects are available across Launch, Team, and Enterprise workspaces?",
+        "expected_doc_ids": [
+          "regions"
+        ],
+        "expected_keywords": [
+          "Virginia",
+          "Dublin"
+        ],
+        "should_have_missing_evidence": false,
+        "should_have_conflict": false
+      },
+      "checks": {
+        "keywords_present": true,
+        "citations_valid": true,
+        "execution_trace_complete": true
+      },
+      "status": "PASSED",
+      "answer_preview": "Based on the verified Asterline documentation:\n\n- According to Regions and workspace setup [regions:2]:\n  \"A workspace may contain projects in both su",
+      "valid_citations": [
+        "regions:2",
+        "regions:0",
+        "regions:2",
+        "regions:0"
+      ],
+      "invalid_citations": [],
+      "execution_steps_count": 5
+    },
+    {
+      "test_case": {
+        "id": "TC-05",
+        "category": "cross_user_isolation",
+        "user_id": "eval_bob",
+        "question": "What is Asterline Labs?",
+        "expected_doc_ids": [
+          "company"
+        ],
+        "expected_keywords": [
+          "Asterline"
+        ],
+        "should_have_missing_evidence": false,
+        "should_have_conflict": false,
+        "verify_no_memories_leaked_from": "eval_alice"
+      },
+      "checks": {
+        "keywords_present": true,
+        "citations_valid": true,
+        "cross_user_isolation": true,
+        "execution_trace_complete": true
+      },
+      "status": "PASSED",
+      "answer_preview": "Based on the verified Asterline documentation:\n\n- According to Company overview [company:0]:\n  \"Asterline Labs is a fictional workflow-monitoring soft",
+      "valid_citations": [
+        "company:0",
+        "faq:0",
+        "company:0",
+        "faq:0"
+      ],
+      "invalid_citations": [],
+      "execution_steps_count": 5
+    }
+  ]
+}

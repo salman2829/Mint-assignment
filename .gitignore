@@ -1,0 +1,32 @@
+# Python virtual environments & bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+.pytest_cache/
+
+# Data and runtime vector/memory storage
+data/
+*.db
+*.db-journal
+*.sqlite3
+*.log
+
+# Environment and sensitive keys
+.env
+.env.*
+!.env.example
+
+# IDE & OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Assignment files to keep
+!corpus.jsonl
+
+# Ignore assignment briefing PDFs
+*.pdf

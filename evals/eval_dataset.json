@@ -1,0 +1,53 @@
+[
+  {
+    "id": "TC-01",
+    "category": "grounded_factual",
+    "user_id": "eval_alice",
+    "question": "What is Asterline Labs and where are its offices located?",
+    "expected_doc_ids": ["company"],
+    "expected_keywords": ["Asterline Labs", "Pune", "Dublin"],
+    "should_have_missing_evidence": false,
+    "should_have_conflict": false
+  },
+  {
+    "id": "TC-02",
+    "category": "grounded_security",
+    "user_id": "eval_alice",
+    "question": "What encryption standards does Asterline use for data at rest and in transit?",
+    "expected_doc_ids": ["security"],
+    "expected_keywords": ["AES-256", "TLS 1.2"],
+    "should_have_missing_evidence": false,
+    "should_have_conflict": false
+  },
+  {
+    "id": "TC-03",
+    "category": "missing_evidence",
+    "user_id": "eval_charlie",
+    "question": "What are the menu items available at the Asterline Pune cafeteria for breakfast?",
+    "expected_doc_ids": [],
+    "expected_keywords": ["insufficient evidence"],
+    "should_have_missing_evidence": true,
+    "should_have_conflict": false
+  },
+  {
+    "id": "TC-04",
+    "category": "conflicting_superseded",
+    "user_id": "eval_alice",
+    "question": "Which regional projects are available across Launch, Team, and Enterprise workspaces?",
+    "expected_doc_ids": ["regions"],
+    "expected_keywords": ["Virginia", "Dublin"],
+    "should_have_missing_evidence": false,
+    "should_have_conflict": false
+  },
+  {
+    "id": "TC-05",
+    "category": "cross_user_isolation",
+    "user_id": "eval_bob",
+    "question": "What is Asterline Labs?",
+    "expected_doc_ids": ["company"],
+    "expected_keywords": ["Asterline"],
+    "should_have_missing_evidence": false,
+    "should_have_conflict": false,
+    "verify_no_memories_leaked_from": "eval_alice"
+  }
+]

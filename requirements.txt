@@ -1,0 +1,20 @@
+# Phase 1: Local Embeddings & Vector Store
+chromadb>=0.5.0
+sentence-transformers>=3.0.0
+torch>=2.2.0
+pydantic>=2.0.0
+python-dotenv>=1.0.0
+pypdf>=5.0.0
+
+# Phase 2: Memory & Testing
+pytest>=8.0.0
+
+# Phase 3: LangGraph Multi-Agent Orchestration & Observability
+langgraph>=0.2.0
+langchain>=0.2.0
+langchain-core>=0.2.0
+langchain-openai>=0.1.8
+langsmith>=0.1.75
+
+# Phase 4: Streamlit Web UI
+streamlit>=1.35.0
